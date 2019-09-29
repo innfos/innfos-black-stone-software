@@ -22,7 +22,12 @@ mode3： 文件夹bin/advanced下  功能:同步获取方式得到机器人当�
 
 mode4： 文件夹bin/advanced下  功能:同步获取方式得到机器人当前点的位置，并以关节插值的方式使驱动得最后一轴来回运动20度
 
-类函数：
+类函数：ActuatorController
+
+ActuatorController::processEvents();
+
+处理控制器事件
+
 class linkUnit：
 
 void SetMotinParameter(double reduction_rate,double direct);
@@ -61,9 +66,17 @@ void ActivatePositionMode();
 
 设置机器人工作在位置模式下
 
+void RequestCVPValue();
+
+向机器人发送一次电流、速度和位置的刷新指令
+
+void GetCurrentMachineJointFast(double angle[]);
+
+获取机器人当前的关节角度（单位：弧度），此方式未向机器人发送位置刷新指令
+
 void GetCurrentMachineJoint(double angle[]);
 
-请求并等待机器人返回当前的关节角度（单位：弧度），
+获取机器人当前的关节角度（单位：弧度），此方式会刷新一次位置再返回位置数据
 
 //运动函数
 
@@ -92,3 +105,4 @@ v 最大速度
 a 最大加速度
 
 jerk 最大加加速度
+
