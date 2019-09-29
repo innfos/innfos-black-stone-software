@@ -1,14 +1,23 @@
-# innfos-black-stone-software
+# innfos-robot-cpp-sdk
 
-参考：
-http://innfos.com/wiki/cn/index.html#!pages/桌面级6轴Lite版机械臂（6*NE30）_v1_0.md
+cd innfos-robot-cpp-sdk/example
 
-其中：
+mkdir build
 
-访问该链接download link下载机械臂软件或者直接执行以下命令
-```sh
-git clone https://github.com/innfos/innfos-black-stone-software.git 
-```
+cmake ..
 
-替换为本工程地址，
-注意：目前不支持直线、圆弧。
+make
+
+可执行文件存储在bin文件夹下
+
+5个demo
+
+mode0： 文件夹bin/basic下     功能: 失能机器人
+
+mode1： 文件夹bin/advanced下  功能:异步方式连续记录机器人关节点位（弧度），并打印到终端
+
+mode2： 文件夹bin/advanced下  功能:连续记录机器人关节点位（弧度）一分钟，之后复现该轨迹
+
+mode3： 文件夹bin/advanced下  功能:同步获取方式得到机器人当前点的位置
+
+mode4： 文件夹bin/advanced下  功能:同步获取方式得到机器人当前点的位置，并以关节插值的方式使驱动得最后一轴来回运动20度
