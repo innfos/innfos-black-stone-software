@@ -22,12 +22,30 @@ int main(int argc, char *argv[])
 	LinkUnit link_unit[link_num];	
 
 	// Init the link
-	link_unit[0].InitActuator((uint8_t)1, QDD_NE30_36);
-	link_unit[1].InitActuator((uint8_t)2, QDD_NE30_36);
-	link_unit[2].InitActuator((uint8_t)3, QDD_NE30_36);
-	link_unit[3].InitActuator((uint8_t)4, QDD_NE30_36);
-	link_unit[4].InitActuator((uint8_t)5, QDD_NE30_36);
-	link_unit[5].InitActuator((uint8_t)6, QDD_NE30_36);
+	if(link_unit[0].InitActuator((uint8_t)1, QDD_NE30_36) < 0)
+	{
+		return -1;
+	}
+	if(link_unit[1].InitActuator((uint8_t)2, QDD_NE30_36) < 0)
+	{
+		return -1;
+	}
+	if(link_unit[2].InitActuator((uint8_t)3, QDD_NE30_36) < 0)
+	{
+		return -1;
+	}
+	if(link_unit[3].InitActuator((uint8_t)4, QDD_NE30_36) < 0)
+	{
+		return -1;
+	}
+	if(link_unit[4].InitActuator((uint8_t)5, QDD_NE30_36) < 0)
+	{
+		return -1;
+	}
+	if(link_unit[5].InitActuator((uint8_t)6, QDD_NE30_36) < 0)
+	{
+		return -1;
+	}
 
 	Robot robot;
 	if(robot.InitRobot(link_unit,link_num) < 0)
