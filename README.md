@@ -30,17 +30,28 @@ ActuatorController::processEvents();
 
 class linkUnit：
 
-void SetMotinParameter(double reduction_rate,double direct);
 
-reduction_rate
+/*
+ * uint8_t id：执行器减速比
+ * ActuatorType type_ :执行器型号 ，类型定义如下
+     enum ActuatorType
+    {
+      QDD_LITE_PR60_36,
+      QDD_LITE_NE30_36,
+      QDD_LITE_EL20_36,
+      QDD_PR60_36,
+      QDD_NE30_36,
+      QDD_EL20_36,
+      QDD_PRO_NU80_100_110,
+      QDD_PRO_PR60_80_90,
+      QDD_PRO_NE30_50_70,
+      ACTUATOR_FREE,
+    };
 
-执行器减速比
+ */
+int InitActuator(uint8_t id,ActuatorType type_);
 
-direct
-
-执行器转动方向
-
-class Robot
+class Robot：
 
 int InitRobot(LinkUnit *link_unit,int axis_num);
 
